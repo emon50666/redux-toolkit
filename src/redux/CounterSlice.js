@@ -9,11 +9,13 @@ const counterSlice  = createSlice({
         },
         decrement:(state) =>{
             state.value -=1;
-        }
+        },
+        
+    incrementByAmount: (state, action) => {
+        state.value /= action.payload; // Fixed operator to "+="
+      }
     },
-    incrementByAmount:(state,action) =>{
-        state.value *= action.payload
-    }
+   
 })
 
 export  const{increment,decrement,incrementByAmount} = counterSlice.actions;
